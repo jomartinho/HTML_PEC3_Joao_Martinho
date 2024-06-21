@@ -1,0 +1,562 @@
+/* Variables */
+:root {
+    --main-color: #D11067;
+    --secondary-color: #7A1628;
+    --yellow-color: #FFF616;
+    --light-yellow-color: #FEFBF4;
+    --text-color: #172655;
+    --dark-grey-color: #333333;
+    --green-bg-color: #DEF5F0;
+    --blue-bg-color: #DEF5F0;
+    --orange-bg-color: #DEF5F0;
+    --light-grey-color: #EDEDED;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-script: 'Satisfy', cursive;
+    --max-width: 1200px;
+    --small-radius: 10px;
+    --medium-radius: 21px;
+    --large-radius: 35px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.content {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    width: 100%;
+}
+  
+@media (min-width: 576px) {
+    .content {
+      max-width: 540px;
+    }
+}
+  
+@media (min-width: 768px) {
+    .content {
+      max-width: 720px;
+    }
+}
+  
+@media (min-width: 992px) {
+    .content {
+      max-width: 960px;
+    }
+}
+  
+@media (min-width: 1200px) {
+    .content {
+      max-width: 1140px;
+    }
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-color);
+    background-color: white;
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--main-color);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Header */
+.background {
+    background-image: url('../img/blackboard.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.header-top {
+    background-color: var(--main-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.header-top a {
+    color: white;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    font-family: var(--font-script);
+    font-size: 35px;
+    color: var(--main-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    text-decoration: underline 3px;
+    text-underline-offset: 12px;
+    color: white;
+}
+
+.active {
+    text-decoration: underline 3px;
+    text-underline-offset: 12px;
+    color: var(--yellow-color)
+}
+
+.sign-up {
+    background-color: white;
+    color: var(--main-color);
+    padding: 5px 10px;
+    border-radius: var(--medium-radius);
+    
+}
+
+.sign-up:hover, .sign-up:focus {
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+.hero h1 {
+    font-family: var(--font-script);
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    font-size: 60px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero span {
+    color: var(--yellow-color);
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.search-form input {
+    padding: 10px;
+    border: none;
+    border-radius: var(--large-radius) 0 0 var(--large-radius);
+    font-size: 18px;
+    width: 300px;
+}
+
+.search-form button {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 var(--large-radius) var(--large-radius) 0;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature h2 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.feature p {
+    font-size: 15px;
+}
+
+/* Popular courses */
+.popular-courses {
+    padding: 50px 20px;
+}
+
+.popular-courses h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.popular-courses p {
+    margin-bottom: 20px;
+}
+
+.course-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.course-card {
+    text-align: left;
+    border: 1px solid var(--light-grey-color);
+    border-radius: var(--small-radius);
+    margin-bottom: 20px;
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.course-card img {
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.course-card p img {
+    width: unset;
+}
+
+.course-card:hover img {
+    transform: scale(1.1);
+}
+
+.course-info {
+    padding: 15px;
+}
+
+.course-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.course-info p {
+    font-size: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tag {
+    background-color: var(--main-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: var(--medium-radius);
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Adjusted for better visibility */
+}
+
+.browse-all-courses {
+    display: inline-block;
+    background-color: white;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    padding: 10px 20px;
+    border-radius: var(--medium-radius);
+    margin-top: 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.browse-all-courses:hover, .browse-all-courses:focus {
+    background-color: var(--main-color);
+    color: white;
+}
+
+/* Learning path */
+.learning-path {
+    background-image: url('img/learn-path.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+}
+
+.learning-path h2 {
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.learning-path p {
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+.get-started {
+    background-color: transparent;
+    color: var(--yellow-color);
+    border: 2px solid var(--yellow-color);
+    padding: 10px 20px;
+    border-radius: var(--medium-radius);
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.get-started:hover, .get-started:focus {
+    border-color: var(--yellow-color);
+    color: var(--yellow-color);
+}
+
+/* Solutions */
+.solutions {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.solutions h2 {
+    font-family: var(--font-script);
+    font-weight: 300;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.solution-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.solution-item {
+    background-color: white;
+    border-radius: var(--small-radius);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    margin-bottom: 20px; /* Added margin for better spacing */
+}
+
+.solution-item h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+.solution-item p {
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+.register-now {
+    display: inline-block;
+    background-color: white;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    padding: 10px 20px;
+    border-radius: var(--medium-radius);
+    margin-top: 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.register-now:hover, .register-now:focus {
+    background-color: var(--main-color);
+    color: white;
+}
+
+/* Categories */
+.categories {
+    background-color: var(--light-grey-color);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.category-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.category-card {
+    background-color: white;
+    border: 1px solid var(--light-grey-color);
+    border-radius: var(--medium-radius);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.category-card:hover, .category-card:focus {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.category-card h3 {
+    font-size: 18px;
+}
+
+.category-card p {
+    font-size: 15px;
+}
+
+/* Become instructor */
+.become-instructor {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.become-instructor img {
+    border-radius: var(--small-radius);
+    margin-bottom: 20px;
+}
+
+.become-instructor h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.become-instructor p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.apply-now {
+    display: inline-block;
+    background-color: white;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    padding: 10px 20px;
+    border-radius: var(--medium-radius);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.apply-now:hover, .apply-now:focus {
+    background-color: var(--main-color);
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-left {
+    display: flex;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter label {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: var(--large-radius) 0 0 var(--large-radius);
+    font-size: 15px;
+    width: 300px;
+}
+
+.newsletter button {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 var(--large-radius) var(--large-radius) 0;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background-color: var(--secondary-color);
+}
+
+footer nav ul {
+    list-style: none;
+}
+
+footer nav ul li {
+    margin-bottom: 10px;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 20px auto 0 auto;
+    padding: 20px;
+    border-top: 1px solid var(--light-grey-color);
+}
+
+.credits {
+    font-size: 12px;
+    color: #333333;
+}
